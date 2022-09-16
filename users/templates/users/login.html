@@ -1,0 +1,18 @@
+{% extends "notifier/template.html" %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+    <h1> Hello! </h1>
+    <form action="{% url 'users:login' %}" method="post">
+    {% crispy loginform %}
+    </form>
+
+    <div>
+        {% if message %}
+        {{ message }}
+        {% endif %}
+    </div>
+
+
+{% endblock %}

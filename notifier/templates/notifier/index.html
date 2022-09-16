@@ -1,0 +1,19 @@
+{% extends "notifier/template.html" %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<h2> Welcome {{ current }}</h2>
+<form action="{% url 'notifier:invoicepage' %}" method="post">
+    {% crispy invoiceform %}
+</form>
+<br>
+<h5>
+    {{ current_invoice }}
+</h5>
+<a href="{% url 'users:logout' %}">
+    <button>Logout</button>
+</a>
+
+
+
+{% endblock %}
