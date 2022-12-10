@@ -11,7 +11,7 @@ from requests.structures import CaseInsensitiveDict
 def whatsapp_send(number, salesman, amount):
     url = "https://graph.facebook.com/v14.0/101165502755328/messages"
     headers = CaseInsensitiveDict()
-    headers["Authorization"] = "Bearer EAASJZBQ7hCpQBAKfjiwKdgaQumBrrbh8ehevGyBBirkLtkycug71MDqt77mvWhIUDpGmm4ZCvZAwo2yimEwpjGM72XIpZClVzjqEssj2WtkxPD3qtsOAzZA9qDGyBzOqpCFaxVAUIzZBYeZCrZBIyFvZBIi5YAwWiZC3uafF3D2YluayGcuKEJ1yNW0AZAac9XlH3oMBvDDqV6hLAZDZD"
+    headers["Authorization"] = "Bearer ********"
     headers["Content-Type"] = "application/json"
     data = '{ "messaging_product": "whatsapp", "to": "91' + str(number) + '", "type": "template", "template": { "name": "notifier_message", "language": { "code": "en_US" }, "components": [ { "type": "body", "parameters": [ { "type": "text", "text": "' + salesman + '" }, { "type": "text", "text": "' + str(amount) + '" } ] } ] } }'
     resp = requests.post(url, headers=headers, data=data)
